@@ -28,11 +28,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body className={jost.variable}>
         <Providers>
           <AdminBar />
-          {/* @ts-expect-error */}
+          <>Hi!!</>
+          {/* @ts-expect-error
           <PageHeader />
           <main className="main">{children}</main>
-          {/* @ts-expect-error */}
-          <PageFooter />
+          @ts-expect-error
+          <PageFooter /> */}
         </Providers>
       </body>
     </html>
