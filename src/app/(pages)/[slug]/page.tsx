@@ -59,26 +59,31 @@ export default async function DefaultPage({ params: { slug = 'home' } }) {
   const { hero, layout } = page
 
   return (
-    <React.Fragment>
-      {slug === 'home' ? (
-        <section>
-          <Hero {...hero} />
-          <Gutter className={classes.home}>
-            <Categories categories={categories} />
-            <Promotion />
-          </Gutter>
-        </section>
-      ) : (
-        <>
-          <Hero {...hero} />
-          <Blocks
-            blocks={layout}
-            disableTopPadding={!hero || hero?.type === 'none' || hero?.type === 'lowImpact'}
-          />
-        </>
-      )}
-    </React.Fragment>
+    <div>
+      <div>Content</div>
+    </div>
   )
+  // return (
+  //   <React.Fragment>
+  //     {slug === 'home' ? (
+  //       <section>
+  //         <Hero {...hero} />
+  //         <Gutter className={classes.home}>
+  //           <Categories categories={categories} />
+  //           <Promotion />
+  //         </Gutter>
+  //       </section>
+  //     ) : (
+  //       <>
+  //         <Hero {...hero} />
+  //         <Blocks
+  //           blocks={layout}
+  //           disableTopPadding={!hero || hero?.type === 'none' || hero?.type === 'lowImpact'}
+  //         />
+  //       </>
+  //     )}
+  //   </React.Fragment>
+  // )
 }
 
 export async function generateStaticParams() {
