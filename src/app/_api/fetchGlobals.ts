@@ -53,8 +53,9 @@ export async function fetchHeader(): Promise<Header> {
 }
 
 export async function fetchFooter(): Promise<Footer> {
+  console.log('FETCHING FUNCTION')
   if (!GRAPHQL_API_URL) throw new Error('NEXT_PUBLIC_SERVER_URL not found')
-
+  console.log('FETCHING FUNCTION 2', GRAPHQL_API_URL)
   const footer = await fetch(`${GRAPHQL_API_URL}/api/graphql`, {
     method: 'POST',
     headers: {
@@ -65,6 +66,7 @@ export async function fetchFooter(): Promise<Footer> {
     }),
   })
     .then(res => {
+      console.log('fetch', res)
       if (!res.ok) throw new Error('Error fetching doc')
       return res.json()
     })

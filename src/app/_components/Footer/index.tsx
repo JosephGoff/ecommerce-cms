@@ -10,8 +10,9 @@ export async function PageFooter() {
 
   try {
     footer = await fetchFooter()
+    console.log('index footer', footer)
   } catch (error) {
-    console.log(error)
+    console.log(error, 'index FOOTER ERROR')
   }
 
   const navItems = footer?.navItems || []
